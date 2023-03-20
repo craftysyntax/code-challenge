@@ -97,7 +97,7 @@ class DoctorTable extends DataTableComponent
 
         // Will only merge Doctors that are of the same clinic
         while ($merged = Doctor::where('clinic_id', $doctor->clinic_id)->whereIn('id', $selected)->first()) {
-            $tests = Test::whereIn('referring_doctor_id', $merged->id)->update(['reffering_doctor_id' => $merged->id]);
+            $tests = Test::where('referring_doctor_id', $merged->id)->update(['referring_doctor_id' => $doctor->id]);
             $merged->delete();
         }
     }

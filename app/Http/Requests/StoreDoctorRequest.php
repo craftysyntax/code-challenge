@@ -24,8 +24,7 @@ class StoreDoctorRequest extends FormRequest
         return [
             'name' => 'required',
             'specialty' => '',
-            'clinic_name' => '',
-            'clinic_address' => '',
+            'clinic_id' => '',
         ];
     }
 }
