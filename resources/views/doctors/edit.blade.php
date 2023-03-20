@@ -33,7 +33,7 @@
                 <label for="clinic_name" class="block mb-2">Clinic Name</label>
                 <select name="clinic_id" id="">
                     @foreach ($clinics as $clinic)
-                        @if($clinic->clinic != "" && doctor->clinic_id != $clinic->id)
+                        @if($clinic->clinic != "" && $doctor->clinic_id != $clinic->id)
                             <option value="{{ $clinic->id }}" @if($doctor->clinic_id == $clinic->id) selected @endif>{{ $clinic->clinic }}</option>
                         @endif
                     @endforeach
