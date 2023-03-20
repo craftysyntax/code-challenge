@@ -60,23 +60,3 @@ Make an update to the application by completing the following tasks:
 Submit your solution, along with any additional documentation or explanations, to danny@eugenelabs.com.
 
 Good luck and enjoy the challenge!
-
-## Challenge - Updates and Notes
-
-### Normalize the `doctors` table by splitting it into two tables:
-
-This has been done via a migration and seeder that populates the new clinics table fron the doctors table. 
-
-**It is impportant to NOT run a standard migration** else Doctor columns will be removed before data is moged to the clinic table therefore run... 
-`php artisan migrate --path=database/migrations/2023_03_17_051999_create_clinics_table.php --seed --seeder=ClinicsTableSeeder`
-
-Then a second migration that drops the old columns from the doctors table, run...
-`php artisan migrate --path=database/migrations/2023_03_19_052009_drop_fields_from_doctors_table.php`
-
-### Maintain the relationship between the new tables and tests, ensuring the tests index displays the same information after your changes.
-
-1. Clinic model created and maintains an hasMany relationship to Doctor model.
-2. Doctor model modified to has a belongsTo relationship to Clinic model.
-3. Doctor model to run with the clinic relationshiop as standard.
-
-
