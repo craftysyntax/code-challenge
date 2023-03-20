@@ -1,0 +1,2 @@
+import './alpine';
+import './bootstrap';
