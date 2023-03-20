@@ -14,6 +14,8 @@ I have used [Laravel Livewire Tables](https://github.com/rappasoft/laravel-livew
 
 This has been done via a migration and seeder that populates the new clinics table fron the doctors table. 
 
+**Please note that the DB in repo is post migrations**
+
 **It is impportant to NOT run a standard migration** else Doctor columns will be removed before data is moged to the clinic table therefore run... 
 `php artisan migrate --path=database/migrations/2023_03_17_051999_create_clinics_table.php --seed --seeder=ClinicsTableSeeder`
 
@@ -47,4 +49,6 @@ I added navigation just to make it easier getting around.
 
 For simplicity I have migrated all table views to use Livewire Tables
 
+### Edit/Create Doctors
 
+I have changed the fields to utilise a select list built from the Clinics (excluding blanks)
