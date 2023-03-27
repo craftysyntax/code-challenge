@@ -26,7 +26,7 @@ class DoctorTable extends DataTableComponent
      */
     public function builder(): Builder
     {
-        return Doctor::query()->withCount('tests');
+        return Doctor::query()->withCount('tests')->withCount('clinics');
     }
 
     /**
@@ -45,10 +45,10 @@ class DoctorTable extends DataTableComponent
             Column::make("Specialty", "specialty")
                 ->searchable()
                 ->sortable(),
-            Column::make("Clinic", "clinic.name")
-                ->searchable()
-                ->sortable(),
-            Column::make("Clinic", "clinic.address")
+            Column::make("Clinics", 'id')
+                ->format(
+                    fn ($value, $row, Column $column) => $row->clinics_count
+                )
                 ->sortable(),
             Column::make("Tests", 'id')
                 ->format(

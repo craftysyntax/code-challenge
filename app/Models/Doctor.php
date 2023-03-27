@@ -12,7 +12,7 @@ class Doctor extends Model
     protected $guarded = [];
 
     protected $with = [
-        'clinic',
+        'clinics',
         'tests'
     ];
 
