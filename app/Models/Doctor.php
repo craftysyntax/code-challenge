@@ -12,7 +12,7 @@ class Doctor extends Model
     protected $guarded = [];
 
     protected $with = [
-        'clinic',
+        'clinics',
         'tests'
     ];
 
@@ -21,8 +21,8 @@ class Doctor extends Model
         return $this->hasMany(Test::class, 'referring_doctor_id');
     }
 
-    public function clinic()
+    public function clinics()
     {
-        return $this->belongsTo(Clinic::class);
+        return $this->belongsToMany(Clinic::class, 'doctors_clinics', 'doctor_id', 'clinic_id');
     }
 }
