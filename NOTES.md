@@ -52,3 +52,21 @@ For simplicity I have migrated all table views to use Livewire Tables
 ### Edit/Create Doctors
 
 I have changed the fields to utilise a select list built from the Clinics (excluding blanks)
+
+
+## Update 28/03/2023
+
+Had an hour up sleave to makes changes after clarification of the desired results. Was not completed but this is what was achieved.
+ 
+- New migration to create a pivot table for doctors and clinics.
+- New seeder to populate the new table.
+- Modified the Doctor model for the new belongsToMany relationship.
+- Modified the Clinic model for the new belongsToMany relationship.
+- Removed the clinc name and address columns from the DoctorsTable (Livewire). 
+- Added with a Clinic count column to DoctorsTable
+- Added a ability to list multiple clinics in the doctor.show blade 
+
+
+## Todo
+- Modify the migrations to allow for multiple clinics
+- Modify the Tests (model and views) to related to a specific doctor/clinic record in the pivit table
