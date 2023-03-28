@@ -24,7 +24,7 @@ class TestTable extends DataTableComponent
      */
     public function builder(): Builder
     {
-        return Test::query()->with('referringDoctor');
+        return Test::query();
     }
 
     /**
@@ -51,13 +51,7 @@ class TestTable extends DataTableComponent
                 )
                 ->html()
                 ->searchable()
-                ->sortable(),
-            Column::make("Referring Doctor", 'referringDoctor.name')
-                ->searchable()
-                ->sortable(),
-            Column::make("Referring Clinic", 'referringDoctor.clinic.name')
-                ->searchable()
-                ->sortable(),
+                ->sortable()
         ];
     }
 }
