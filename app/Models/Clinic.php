@@ -14,8 +14,4 @@ class Clinic extends Model
         'address'
     ];
 
-    public function doctors()
-    {
-        return $this->belongsToMany(Doctor::class, 'doctors_clinics', 'clinic_id', 'doctor_id');
-    }
 }
